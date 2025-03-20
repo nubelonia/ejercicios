@@ -19,7 +19,7 @@ class Vehiculo:
         return f"{self.marca} - {self.modelo}"
     
 '''
-Ojo!! Otra alternativa es asi, aunque según fuentes consultadas, el de arriba, es más limpio, eficiente (al evitar concatenación manual
+Ojo!! Otra alternativa para el metodo -> nombre_completo es asi, aunque según fuentes consultadas, el de arriba, es más limpio, eficiente (al evitar concatenación manual
 por cada signo "+", y menos propenso a errores)
 
     def nombre_completo(self):
