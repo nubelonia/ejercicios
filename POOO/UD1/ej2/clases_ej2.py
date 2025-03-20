@@ -22,7 +22,7 @@ class Vehiculo:
 Ojo!! Otra alternativa es asi, aunque según fuentes consultadas, el de arriba, es más limpio, eficiente (al evitar concatenación manual
 por cada signo "+", y menos propenso a errores)
 
-def nombre_completo(self):
-    return self.marca + "-" + self.modelo
+    def nombre_completo(self):
+        return self.marca + "-" + self.modelo
     
 '''
