@@ -11,6 +11,10 @@ class Vehiculo:
         self.modelo = modelo
         self.año = año
         self.precio = precio
-        
+
+# Añado método __str__
+
+    def __str__(self):
+        return f"Marca: {self.marca} - modelo: {self.modelo} - año: {self.año} - precio: {self.precio}"        
 
 
