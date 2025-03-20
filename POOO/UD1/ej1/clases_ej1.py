@@ -5,6 +5,8 @@ modelo y el precio de cada vehículo (mediante __str__).
 
 '''
 
+#Creamos la clase Vehiculo
+
 class Vehiculo:
     def __init__(self, marca, modelo, año, precio):
         self.marca = marca
