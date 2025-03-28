@@ -38,17 +38,6 @@ class Contacto:
         return self.nombre == otro_contacto.nombre and self.telefono == otro_contacto.telefono and self.correo == otro_contacto.correo
     
 
-
-class Agenda:
-
-    contactos = [1,
-        Contacto("Ana", "484484844", "ana@gmail.com"),
-        Contacto("Luis", "22222222", "luis@gmail.com"),
-        Contacto("Eva", "33333333", "eva@gmail.com"),
-        Contacto("Fran", "55555555", "fran@gmail.com"),
-        Contacto("Elena", "924556677", "elena@gmail.com"),
-    ]
-
 class Agenda:
     contactos = [1,
         Contacto("Ana", "484484844", "ana@gmail.com"),
