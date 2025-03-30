@@ -34,10 +34,9 @@ class Ciudad:
         return self.nombre == otra_ciudad.nombre and self.pais == otra_ciudad.pais
             
   
-class Lista_ciudades:
+class ListaCiudades:
 
-    list_cities = [1, 
-Ciudad("Bogotá", 8000000, "Colombia", "América"),
+    list_cities = [Ciudad("Bogotá", 8000000, "Colombia", "América"),
 Ciudad("Lima", 10000000, "Peru", "America"),
 Ciudad("Paris", 5000000, "Francia", "Europa"),
 Ciudad("Berlin", 4000000, "Alemania", "Europa"),
@@ -64,6 +63,80 @@ Ciudad("Lisboa", 3000000, "Portugal", "Europa"),
 # Mostrar las ciudades de un continente dado.
 
     @classmethod
-    def mostrar_ciudades_continente(cls, ciudad_buscada):
-        for ciudad in list_ 
+    def mostrar_ciudades_continente(cls, continente):
+        # Vamos a filtrar las ciudades por continente creando una rastreo que devuelva una lista
+        
+        ciudades_encontradas = [ciudad for ciudad in cls.list_cities 
+                                if ciudad.continente.lower() == continente.lower()]
+        return ciudades_encontradas
+    
+# Mostrar las ciudades con una población mayor que un número dado.
+
+    @classmethod
+    def mostrar_por_población(cls, poblacion_introducida):
+
+        ciudades_segun_poblacion = [ciudad for ciudad in cls.list_cities if ciudad.poblacion > poblacion_introducida ]
+        return ciudades_segun_poblacion
+    
+# Retornar el número de ciudades de un país dado.
+
+    @classmethod
+    def mostrar_ciudades_pais(cls, pais_introducido):
+
+        ciudades_por_pais = [ciudad for ciudad in cls.list_cities if ciudad.pais.lower() == pais_introducido.lower()]
+        return ciudades_por_pais
+    
+# Retornar el número de ciudades que contienen una cadena en su nombre.
+
+    @classmethod
+    def contar_ciudades_cadena(cls, cadena):
+        
+        return sum(1 for ciudad in cls.list_cities if cadena.lower() in ciudad.nombre.lower())
+        
+    
+# Retornar la media de la población de las ciudades de un país.
+
+    @classmethod
+    def media_poblacion_por_pais(cls, pais_buscado):
+        ciudades_pais = [ciudad.poblacion for ciudad in cls.list_cities if ciudad.pais.lower() == pais_buscado.lower()]
+        
+        if not ciudades_pais:  # Si la lista está vacía
+            return None
+        
+        media_poblacion = sum(ciudades_pais) / len(ciudades_pais)
+        return media_poblacion
+
+
+# Retornar una lista con las ciudades de un país.
+
+    @classmethod
+    def listaCiudades_pais(cls, pais_consultado):
+        # Filtra las ciudades cuyo país coincide con el país ingresado (ignorando mayúsculas)
+        listaCiudades_por_pais = [ciudad for ciudad in cls.list_cities if ciudad.pais.lower() == pais_consultado.lower()]
+        return listaCiudades_por_pais
+
+# Retornar la suma de los habitantes de todas las ciudades.
+
+    @classmethod
+    def sumaTotalHabitantes(cls):
+        return sum(ciudad.poblacion for ciudad in cls.list_cities)
+    
+# Añadir ciudad
+
+    @classmethod
+    def añadir_ciudad(cls, nueva_ciudad):
+        if nueva_ciudad in cls.list_cities:  # Verifica si la ciudad ya está en la lista
+            return False  # Si ya existe, no se añade y retorna False
+    
+        cls.list_cities.append(nueva_ciudad)  # Si no está en la lista, la agrega
+        return True  # Retorna True para indicar que se añadió correctamente
+
+
+
+    
+
+                                
+        
+        
+            
   
