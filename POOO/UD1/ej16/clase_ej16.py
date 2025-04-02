@@ -16,9 +16,8 @@ Se trata de programar métodos que permitan:
 '''
 
 class Movie:
-
-    contador_peliculas = 0
-
+       
+    
     def __init__(self, titulo, año, director, reparto, genero, minutos, productora):
         self.titulo = titulo
         self.año = año
@@ -26,20 +25,16 @@ class Movie:
         self.reparto = reparto
         self.genero = genero
         self.minutos = minutos
-        self.productora = productora
-        Movie.contador_peliculas +=1
+        self.productora = productora        
+        
 
     def __str__(self):
         return f"Titulo: {self.titulo} - Año: {self.año} - Director: {self.director} - Reparto: {self.reparto} - Género: {self.genero} - Duración: {self.minutos} minutos - Productora: {self.productora}" 
 
-# Retornar cuántas pelis superan la duración media.
-
-    @classmethod
-    def totalPeliculas(cls):
-        return cls.contador_peliculas
-
 
 class ListaPeliculas:
+               
+        contadorPeliculas = 0
         list_movies = [
             Movie("The Shawshank Redemption", 1994, "Frank Darabont", 
               "Tim Robbins, Morgan Freeman", "Drama", 142, "Castle Rock Entertainment"),
@@ -95,6 +90,8 @@ class ListaPeliculas:
             Movie("Goodfellas", 1990, "Martin Scorsese", 
               "Robert De Niro, Ray Liotta", "Crime", 146, "Warner Bros. Pictures")
     ]
+      
+      
          
 
 ###############################
@@ -104,16 +101,35 @@ class ListaPeliculas:
         @classmethod
         def pelisPorProductora(cls, productora):
         #Vamos a filtrar las pelis según productora
-            peliculas_productor = [peliculas for peliculas in cls.list_movies if peliculas.productora.lower() == productora.lower()]
-            return peliculas_productor
+          peliculas_productor = [peliculas for peliculas in cls.list_movies if peliculas.productora.lower() == productora.lower()]
+          return peliculas_productor
 
 
 # Retornar las pelis con una cadena en el título. Esta cadena se pasará como parámetro.
 
         @classmethod
         def pelisPorCadenaTitulo(cls, cadenaTitulo):
-            peliculas_cadena = [pelicula for pelicula in cls.list_movies if cadenaTitulo.lower() in pelicula.titulo.lower()]
-            return peliculas_cadena
+          peliculas_cadena = [pelicula for pelicula in cls.list_movies if cadenaTitulo.lower() in pelicula.titulo.lower()]
+          return peliculas_cadena
         
 
+# Retornar cuántas pelis superan la duración media.
         
+
+        @classmethod
+        def totalPeliculas(cls):
+          return len(cls.list_movies)  # Cuenta correctamente las películas
+
+        @classmethod
+        def mediaDuracionPeliculas(cls):
+          total_duracion = sum(pelicula.minutos for pelicula in cls.list_movies)
+          return total_duracion / cls.totalPeliculas()
+
+        @classmethod
+        def peliculasSuperanMedia(cls):
+          media = cls.mediaDuracionPeliculas()
+          return [pelicula for pelicula in cls.list_movies if pelicula.minutos > media]
+        
+        @classmethod
+        def cantidadPeliculasSuperanMedia(cls):
+          return len(cls.peliculasSuperanMedia())  # Devuelve el número de películas que superan la media

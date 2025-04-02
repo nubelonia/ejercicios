@@ -36,7 +36,7 @@ else:
 
 # Retornar las pelis con una cadena en el título. Esta cadena se pasará como
 
-cadenaTitulo_intro = input("Introduce cade para Título de pelicula: ")
+cadenaTitulo_intro = input("Introduce cadena para Título de pelicula: ")
 tituloPeliCadena = ListaPeliculas.pelisPorCadenaTitulo(cadenaTitulo_intro)
 
 if cadenaTitulo_intro:
@@ -47,16 +47,25 @@ if cadenaTitulo_intro:
 else:
     print(f"No se encontró peliculas para los carácteres introducidos")
 
+
 # Retornar cuántas pelis superan la duración media.
 
-sumatorioDuracionPeliculas = 0
+        # Obtener la cantidad total de películas
+cantidadTotalPeliculas = ListaPeliculas.totalPeliculas()
+print(f"Total de películas: {cantidadTotalPeliculas}")
 
-cantidadTotalPeliculas = Movie.contador_peliculas()
+        # Calcular la media de duración
+mediaDuracion = ListaPeliculas.mediaDuracionPeliculas()
+print(f"La media de duración de las películas es: {mediaDuracion:.2f} minutos")
 
-for peliculas in peliculas:
-    sumatorioDuracionPeliculas += peliculas.duracion
+        # Obtener películas que superan la media
+peliculas_superan = ListaPeliculas.peliculasSuperanMedia()
 
-    #media duración peliculas
-    mediaDuracion = sumatorioDuracionPeliculas / cantidadTotalPeliculas
+        # Mostrar resultados
+print(f"Películas que superan la duración media ({mediaDuracion:.2f} min):")
+for pelicula in peliculas_superan:
+    print(pelicula)
 
-    print(f"La media de duración de las pelis es: {mediaDuracion}")
+        # Obtener y mostrar la cantidad de películas que superan la media
+cantidad_peliculas_superan = ListaPeliculas.cantidadPeliculasSuperanMedia()
+print(f"Cantidad de películas que superan la duración media: {cantidad_peliculas_superan}")
