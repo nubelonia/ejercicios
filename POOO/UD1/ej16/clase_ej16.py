@@ -16,6 +16,9 @@ Se trata de programar métodos que permitan:
 '''
 
 class Movie:
+
+    contador_peliculas = 0
+
     def __init__(self, titulo, año, director, reparto, genero, minutos, productora):
         self.titulo = titulo
         self.año = año
@@ -24,11 +27,16 @@ class Movie:
         self.genero = genero
         self.minutos = minutos
         self.productora = productora
+        Movie.contador_peliculas +=1
 
     def __str__(self):
         return f"Titulo: {self.titulo} - Año: {self.año} - Director: {self.director} - Reparto: {self.reparto} - Género: {self.genero} - Duración: {self.minutos} minutos - Productora: {self.productora}" 
 
+# Retornar cuántas pelis superan la duración media.
 
+    @classmethod
+    def totalPeliculas(cls):
+        return cls.contador_peliculas
 
 
 class ListaPeliculas:
@@ -107,5 +115,5 @@ class ListaPeliculas:
             peliculas_cadena = [pelicula for pelicula in cls.list_movies if cadenaTitulo.lower() in pelicula.titulo.lower()]
             return peliculas_cadena
         
-# Retornar cuántas pelis superan la duración media.
+
         

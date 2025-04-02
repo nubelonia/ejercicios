@@ -48,3 +48,15 @@ else:
     print(f"No se encontró peliculas para los carácteres introducidos")
 
 # Retornar cuántas pelis superan la duración media.
+
+sumatorioDuracionPeliculas = 0
+
+cantidadTotalPeliculas = Movie.contador_peliculas()
+
+for peliculas in peliculas:
+    sumatorioDuracionPeliculas += peliculas.duracion
+
+    #media duración peliculas
+    mediaDuracion = sumatorioDuracionPeliculas / cantidadTotalPeliculas
+
+    print(f"La media de duración de las pelis es: {mediaDuracion}")
