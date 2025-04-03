@@ -69,3 +69,13 @@ for pelicula in peliculas_superan:
         # Obtener y mostrar la cantidad de películas que superan la media
 cantidad_peliculas_superan = ListaPeliculas.cantidadPeliculasSuperanMedia()
 print(f"Cantidad de películas que superan la duración media: {cantidad_peliculas_superan}")
+
+
+        # Ordenamos las películas por duración
+ListaPeliculas.ordenarPorDuracion()
+
+        # Mostramos la lista ordenada
+print("\n Películas ordenadas por duración:")
+for pelicula in ListaPeliculas.list_movies:
+    print(pelicula)
+

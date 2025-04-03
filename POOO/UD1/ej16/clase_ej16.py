@@ -30,11 +30,15 @@ class Movie:
 
     def __str__(self):
         return f"Titulo: {self.titulo} - Año: {self.año} - Director: {self.director} - Reparto: {self.reparto} - Género: {self.genero} - Duración: {self.minutos} minutos - Productora: {self.productora}" 
+    
+    def __lt__(self, otra):
+        return self.minutos < otra.minutos
+       
 
 
 class ListaPeliculas:
                
-        contadorPeliculas = 0
+        
         list_movies = [
             Movie("The Shawshank Redemption", 1994, "Frank Darabont", 
               "Tim Robbins, Morgan Freeman", "Drama", 142, "Castle Rock Entertainment"),
@@ -133,3 +137,10 @@ class ListaPeliculas:
         @classmethod
         def cantidadPeliculasSuperanMedia(cls):
           return len(cls.peliculasSuperanMedia())  # Devuelve el número de películas que superan la media
+        
+
+# Ordenar por el campo duración. Para realizar esta tarea debemos utilizar lista.sort()
+
+        @classmethod
+        def ordenarPorDuracion(cls):
+          cls.list_movies.sort()  # Usa el método __lt__
