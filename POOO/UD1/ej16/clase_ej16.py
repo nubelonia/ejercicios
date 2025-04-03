@@ -31,6 +31,7 @@ class Movie:
     def __str__(self):
         return f"Titulo: {self.titulo} - Año: {self.año} - Director: {self.director} - Reparto: {self.reparto} - Género: {self.genero} - Duración: {self.minutos} minutos - Productora: {self.productora}" 
     
+    # Para ordenar el campo de duracion de menor a mayor
     def __lt__(self, otra):
         return self.minutos < otra.minutos
        
@@ -136,8 +137,8 @@ class ListaPeliculas:
         
         @classmethod
         def cantidadPeliculasSuperanMedia(cls):
-          return len(cls.peliculasSuperanMedia())  # Devuelve el número de películas que superan la media
-        
+          return len(cls.peliculasSuperanMedia())  # Devuelve el número de películas que superan la media        
+
 
 # Ordenar por el campo duración. Para realizar esta tarea debemos utilizar lista.sort()
 
