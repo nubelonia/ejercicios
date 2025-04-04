@@ -27,13 +27,20 @@ class Vehiculo:
         self.anio = anio
         self.kilometros = kilometros
         self.potencia = potencia
+        # Este atributo es sin parámetro. En este caso mediante el método agregar_reparacion 
+        # añade la fecha a la lista 
         self.fechas_reparaciones = []
     
+    # No pueden existir dos vehiculos con la misma matrícula
     def __eq__(self, otro_vehiculo):
         return self.matricula == otro_vehiculo.matricula
         
     def __str__(self):
         return f"Matricula: {self.matricula} - Marca: {self.marca} - modelo: {self.modelo} - color: {self.color} - año: {self.anio} - Kms: {self.kilometros} - potencia: {self.potencia} CV - Reparaciones: {self.fechas_reparaciones} "
+    
+    # Método para agregar fechas de reparaciones
+    def agregarReparacion(self, fecha):
+         self.fechas_reparaciones.append(fecha)
     
 
 
@@ -49,5 +56,12 @@ Vehiculo("MMG122", "Nissan", "Micra", "Azul", 2020, 123000, 86),
 Vehiculo("ZZE123", "Seat", "Ibiza", "Blanco", 2010, 67000, 120),
 ]
         
+
+        @classmethod
+        def anadirVehiculo(cls, nuevo_vehiculo)
+             if nuevo_vehiculo in cls.lista_vehiculos:
+                  return False
+             else:
+                  cls.lista_vehiculos.append(nuevo_vehiculo)
         
         
