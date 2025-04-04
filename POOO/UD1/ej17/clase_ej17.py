@@ -28,20 +28,20 @@ class Vehiculo:
         self.kilometros = kilometros
         self.potencia = potencia
         # Este atributo es sin parámetro. En este caso mediante el método agregar_reparacion 
-        # añade la fecha a la lista 
+        # añade la fecha a la lista vacía 
         self.fechas_reparaciones = []
     
-    # No pueden existir dos vehiculos con la misma matrícula
+    # No pueden existir varios vehículos con idéntica matrícula.
     def __eq__(self, otro_vehiculo):
         return self.matricula == otro_vehiculo.matricula
         
     def __str__(self):
         return f"Matricula: {self.matricula} - Marca: {self.marca} - modelo: {self.modelo} - color: {self.color} - año: {self.anio} - Kms: {self.kilometros} - potencia: {self.potencia} CV - Reparaciones: {self.fechas_reparaciones} "
     
+    
     # Método para agregar fechas de reparaciones
     def agregarReparacion(self, fecha):
-         self.fechas_reparaciones.append(fecha)
-    
+        self.fechas_reparaciones.append(fecha)    
 
 
 class ListaVehiculos:
@@ -55,13 +55,20 @@ Vehiculo("KKL122", "Volkswagen", "Golf", "Blanco", 2020, 230400, 120),
 Vehiculo("MMG122", "Nissan", "Micra", "Azul", 2020, 123000, 86),
 Vehiculo("ZZE123", "Seat", "Ibiza", "Blanco", 2010, 67000, 120),
 ]
+               
         
 
+        # Método para añadir un vehículo si no tiene matrícula repetida
         @classmethod
-        def anadirVehiculo(cls, nuevo_vehiculo)
-             if nuevo_vehiculo in cls.lista_vehiculos:
-                  return False
-             else:
-                  cls.lista_vehiculos.append(nuevo_vehiculo)
-        
-        
+        def agregar_vehiculo(cls, vehiculo):
+            if vehiculo.matricula in [v.matricula for v in cls.lista_vehiculos]:
+                print(f"No se puede agregar. Ya existe un vehículo con la matrícula {vehiculo.matricula}.")
+            else:
+                cls.lista_vehiculos.append(vehiculo)
+                print(f"Vehículo con matrícula {vehiculo.matricula} agregado exitosamente.")
+
+        # Método para mostrar todos los vehículos en la lista
+        @classmethod
+        def mostrar_vehiculos(cls):
+            for vehiculo in cls.lista_vehiculos:
+                print(vehiculo)
