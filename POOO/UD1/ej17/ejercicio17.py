@@ -21,7 +21,10 @@ ListaVehiculos.mostrar_vehiculos()
 
 # Añadir reparacion
 
-auto1 = ListaVehiculos.agregarReparacion('XYZ999', date(2025, 3, 3))
-auto1 = ListaVehiculos.agregarReparacion('XYZ999', date(2025, 4, 2))
+ListaVehiculos.agregar_reparacion_por_matricula('XYZ999', date(2025, 3, 3))
+ListaVehiculos.agregar_reparacion_por_matricula('XYZ999', date(2025, 4, 2))
+
+# Mostrar número de reparaciones
+print("Número de reparaciones:", ListaVehiculos.numero_reparaciones_vehiculo("XYZ999"))
 
 
