@@ -67,6 +67,7 @@ Vehiculo("ZZE123", "Seat", "Ibiza", "Blanco", 2010, 67000, 120),
                     return vehiculo
             return None
         
+        
 
 
         # Añadir vehículo si no tiene matrícula repetida
@@ -77,8 +78,6 @@ Vehiculo("ZZE123", "Seat", "Ibiza", "Blanco", 2010, 67000, 120),
             else:
                 cls.lista_vehiculos.append(vehiculo)
                 print(f"Vehículo con matrícula {vehiculo.matricula} agregado exitosamente.")
-
-
         
 
         
@@ -91,7 +90,8 @@ Vehiculo("ZZE123", "Seat", "Ibiza", "Blanco", 2010, 67000, 120),
             if vehiculo:
                 return len(vehiculo.fechas_reparaciones)
             else:
-                return -1  # Vehículo no encontrado   
+                return -1  # Vehículo no encontrado 
+              
 
 
         
@@ -121,7 +121,6 @@ Vehiculo("ZZE123", "Seat", "Ibiza", "Blanco", 2010, 67000, 120),
 
 
 
-
         # Ordenar la lista de vehículos por año de compra.
         @classmethod
         def ordenar_por_anio(cls, rever):
@@ -137,7 +136,6 @@ Vehiculo("ZZE123", "Seat", "Ibiza", "Blanco", 2010, 67000, 120),
             cls.lista_vehiculos.sort(key=lambda vehiculo: vehiculo.anio, reverse=not ascendente)
 
         '''
-
 
         
         
