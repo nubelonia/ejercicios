@@ -31,7 +31,7 @@ class Vehiculo:
         # añade la fecha a la lista vacía 
         self.fechas_reparaciones = []
     
-    # No pueden existir varios vehículos con idéntica matrícula.
+    # No pueden existir dos vehículos con idéntica matrícula.
     def __eq__(self, otro_vehiculo):
         return self.matricula == otro_vehiculo.matricula
         
@@ -58,13 +58,16 @@ Vehiculo("ZZE123", "Seat", "Ibiza", "Blanco", 2010, 67000, 120),
                
         
 
-        # Buscar vehículo por matrícula (ignora mayúsculas/minúsculas)
+        # Buscar vehículo por matrícula (ignora mayúsculas/minúsculas). Con esto se consigue comprobar
+        # si ya existe ese vehículo en la lista. Si no es asi, se puede añadir el vehículo.
         @classmethod
         def buscar_por_matricula(cls, matricula):
             for vehiculo in cls.lista_vehiculos:
                 if vehiculo.matricula.lower() == matricula.lower():
                     return vehiculo
             return None
+        
+
 
         # Añadir vehículo si no tiene matrícula repetida
         @classmethod
@@ -75,23 +78,12 @@ Vehiculo("ZZE123", "Seat", "Ibiza", "Blanco", 2010, 67000, 120),
                 cls.lista_vehiculos.append(vehiculo)
                 print(f"Vehículo con matrícula {vehiculo.matricula} agregado exitosamente.")
 
-        # Mostrar todos los vehículos en la lista
-        @classmethod
-        def mostrar_vehiculos(cls):
-            for vehiculo in cls.lista_vehiculos:
-                print(vehiculo)
 
         
-         # Agregar una reparación usando la matrícula
-        @classmethod
-        def agregar_reparacion_por_matricula(cls, matricula, fecha):
-            vehiculo = cls.buscar_por_matricula(matricula)
-            if vehiculo:
-                vehiculo.agregar_reparacion(fecha)
-                print(f"Reparación del {fecha} añadida al vehículo con matrícula {matricula}.")
-            else:
-                print(f"No se encontró ningún vehículo con matrícula {matricula}.")
 
+        
+
+        
         # Retornar el número de reparaciones de un vehículo, a partir de su matrícula
         @classmethod
         def numero_reparaciones_vehiculo(cls, matricula):
@@ -99,4 +91,81 @@ Vehiculo("ZZE123", "Seat", "Ibiza", "Blanco", 2010, 67000, 120),
             if vehiculo:
                 return len(vehiculo.fechas_reparaciones)
             else:
-                return -1  # Vehículo no encontrado
+                return -1  # Vehículo no encontrado   
+
+
+        
+
+        # Eliminar un vehículo de la lista conociendo su matrícula.
+        @classmethod
+        def eliminar_vehiculo(cls, matricula):
+            vehiculo = cls.buscar_por_matricula(matricula)  # Usamos buscar_por_matricula
+            if vehiculo:  # Si el vehículo existe
+                cls.lista_vehiculos.remove(vehiculo)  # Eliminamos directamente el objeto de la lista
+                return True
+            return False  # Si no existe, retornamos False
+
+
+        '''
+        Esto lo propone el curso:
+        # Eliminar un vehículo de la lista conociendo su matrícula.
+        @classmethod
+        def eliminar_vehiculo(cls, matricula):
+            for i in range(len(cls.lista_vehiculos)):    # 0 ---- 5
+                if cls.lista_vehiculos[i].matricula == matricula:
+                    del cls.lista_vehiculos[i]
+                return True
+            return False              
+        '''
+
+
+
+
+
+        # Ordenar la lista de vehículos por año de compra.
+        @classmethod
+        def ordenar_por_anio(cls, rever):
+            cls.lista_vehiculos.sort(key= lambda v: v.anio, reverse=rever)
+
+        
+        '''
+        Otra alternativa:
+
+        # Ordenar la lista de vehículos por año de compra.
+        @classmethod
+        def ordenar_por_anio(cls, ascendente=True):
+            cls.lista_vehiculos.sort(key=lambda vehiculo: vehiculo.anio, reverse=not ascendente)
+
+        '''
+
+
+        
+        
+        
+        # Añadir reparación a un vehículo. Recibe matrícula y fecha de reparación.
+        @classmethod
+        def agregar_reparacion_por_matricula(cls, matricula, fecha):
+            vehiculo = cls.buscar_por_matricula(matricula)
+            if vehiculo:
+                vehiculo.agregar_reparacion(fecha)
+                print(f"Reparación con fecha: {fecha} añadida al vehículo con matrícula: {matricula}.")
+            else:
+                print(f"No se encontró ningún vehículo con matrícula {matricula}.")
+
+        
+
+
+        # Mostrar todos los vehículos.
+        @classmethod
+        def mostrar_todos(cls):
+            print(*cls.lista_vehiculos, sep="\n")
+
+        '''
+        Otra alternativa:
+
+        # Mostrar todos los vehículos en la lista
+        @classmethod
+        def mostrar_vehiculos(cls):
+            for vehiculo in cls.lista_vehiculos:
+                print(vehiculo)
+        '''
