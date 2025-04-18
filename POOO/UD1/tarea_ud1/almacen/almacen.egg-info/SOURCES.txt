@@ -1,0 +1,9 @@
+README.md
+setup.py
+almacen/__init__.py
+almacen/gestion.py
+almacen/producto.py
+almacen.egg-info/PKG-INFO
+almacen.egg-info/SOURCES.txt
+almacen.egg-info/dependency_links.txt
+almacen.egg-info/top_level.txt
