@@ -103,12 +103,7 @@ class Baloncesto(Partido):
         if self.puntos_contrin1 > self.puntos_contrin2:
             return self.contrincante1
         elif self.puntos_contrin1 < self.puntos_contrin2:
-            return self.contrincante2
-
-             
-    
-    
-    
+            return self.contrincante2   
     
     
     
@@ -123,11 +118,15 @@ class Baloncesto(Partido):
     ##### Partido de Tenis:
 class Tenis(Partido):
 
+    def __init__(self, contrincante1, contrincante2, fecha, competicion, sets_contrin1, sets_contrin2):
+        super().__init__(contrincante1, contrincante2, fecha, competicion)
 
-    ganados_contrin1 = []
 
 
-    ganados_contrin2 = []
+    
+
+
+    
 
     
 
