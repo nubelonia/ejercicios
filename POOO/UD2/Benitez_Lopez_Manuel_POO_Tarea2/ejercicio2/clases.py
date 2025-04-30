@@ -55,6 +55,19 @@ sin tilde.
     
     '''
 
+    
+    def __len__(self):
+        # Defino una cadena que contenga todas las vocales, sean mayúsculas, minusculas con y sin tilde
+        vocales = "aeiouáéíóúAEIOUÁÉÍÓÚ"
+        # Creo la variable contador que empiece desde cero, para contar las vocales 
+        contador = 0
+        # El for recorre todas las letras del texto que se instancie en la clase Cadena
+        for letra in self.texto:
+            # Si en el recorrido encuentra letras como las que contiene vocales las suma al contador
+            if letra in vocales:
+                contador += 1
+        return contador
+
 
 
 
@@ -64,6 +77,9 @@ sin tilde.
 misma longitud, es decir, el mismo número de vocales.
     
     '''
+    # El método __eq__ permite comparar si la igualdad establecida es cierta o no
+    def __eq__(self, otro):
+        return len(self) == len(otro)
 
 
 
@@ -74,6 +90,17 @@ atributo del objeto Cadena la cadena valor_str. El objeto original se verá
 modificado.
     
     '''
+
+    def __iadd__(self, otro):
+        self.texto += otro
+        return self
+    
+
+
+
+    #Este método es necesario para que pueda imprimir los strings de texto
+    def __str__(self):
+        return self.texto
 
 
 

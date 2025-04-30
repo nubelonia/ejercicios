@@ -1,4 +1,4 @@
-from clases import *
+from clases import Cadena
 
 # Sumar objetos Cadena
 cadena1 = Cadena("Me gusta programar en ")
