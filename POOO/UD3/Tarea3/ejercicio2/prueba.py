@@ -1,6 +1,6 @@
 from modulo_gym import generar_json_actividad, generar_csv_filtrado
 
-# Rutas absolutas reales de mi equipo
+# Rutas absolutas reales de mi equipo / cambiar en caso de prueba en otro equipo ó servidor
 csv_entrada = "C:/Users/goku/Desktop/CE_PYTHON/POOO/ejercicios/POOO/UD3/Tarea3/ejercicio2/gym_data.csv"
 salida_json = "C:/Users/goku/Desktop/CE_PYTHON/POOO/ejercicios/POOO/UD3/Tarea3/ejercicio2/actividades.json"
 salida_csv = "C:/Users/goku/Desktop/CE_PYTHON/POOO/ejercicios/POOO/UD3/Tarea3/ejercicio2/filtro_female_HIIT.csv"
