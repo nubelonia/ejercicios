@@ -10,7 +10,7 @@ class BikestoreDB:
 
     def conectar(self):
         print("Intentando conectar a la base de datos...")
-        print(f"Usando host={self.host}, database={self.database}, user={self.user}")
+        
         try:
             conn = mysql.connector.connect(
                 host=self.host,
