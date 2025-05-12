@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}EventosYa{% endblock %}</title>
+</head>
+<body>
+    <h1>{% block encabezado %}EventosYa{% endblock %}</h1>
+    <h2>Opciones</h2>
+    <ul>
+        <li><a href="/">Index</a></li>
+        <li><a href="/eventos/list/">Listado de eventos</a></li>
+        <li><a href="/eventos/pasados/">Eventos pasados</a></li>
+        <li><a href="/eventos/festivales/">Festivales</a></li>
+        <li><a href="/eventos/creator">Creador</a></li>
+    </ul>
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}EventosYa. Web creada por...{% endblock %}
+{% block encabezado %}EventosYa. Web creada por...{% endblock %}
+{% block content %}
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ nombre }}</td>
+            <td>{{ correo }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
