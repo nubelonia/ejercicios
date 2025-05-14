@@ -1,2 +1,2 @@
-minombre = "Manuel Benítez López"
+minombre = "Manuel Gonzalez"
 print(minombre.split())
