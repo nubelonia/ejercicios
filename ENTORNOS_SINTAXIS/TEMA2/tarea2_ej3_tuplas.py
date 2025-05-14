@@ -1,0 +1,7 @@
+tupla = (10, 20, 30, 40, 50, 30, 10)
+#buscar_treinta = tupla.index(30)
+#print("El primer 30 se encuentra en la posición: ", buscar_treinta)
+#cuenta_diez = tupla.count(10)
+#print("El número 10 aparece: ", cuenta_diez, " veces")
+print(tupla[0])
+print(tupla[-1])
