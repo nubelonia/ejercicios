@@ -1,0 +1,1 @@
+text = "All you need is love"
