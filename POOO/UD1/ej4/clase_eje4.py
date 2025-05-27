@@ -4,7 +4,6 @@ actualice la cantidad de un producto sumándole un valor pasado como parámetro.
 Mostrar los datos de un producto antes y después de ser modificada su cantidad.
 
 '''
-
 class Producto:
 
     contador_producto = 0 #Agregamos este atributo de clase

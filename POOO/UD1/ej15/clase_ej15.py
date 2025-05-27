@@ -88,11 +88,21 @@ Ciudad("Lisboa", 3000000, "Portugal", "Europa"),
     
 # Retornar el número de ciudades que contienen una cadena en su nombre.
 
+    '''
     @classmethod
     def contar_ciudades_cadena(cls, cadena):
         
         return sum(1 for ciudad in cls.list_cities if cadena.lower() in ciudad.nombre.lower())
-        
+    '''
+    '''
+    
+    '''    
+    @classmethod
+    def contar_ciudades_cadena(cls, cadena):
+
+        return sum(1 for ciudad in cls.list_cities if cadena.lower() in ciudad.nombre.lower())
+    
+         
     
 # Retornar la media de la población de las ciudades de un país.
 

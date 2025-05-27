@@ -102,38 +102,83 @@ class ListaPeliculas:
 ###############################
 
 # Retornar las pelis de una productora pasada como parámetro.
-         
+        '''
         @classmethod
         def pelisPorProductora(cls, productora):
         #Vamos a filtrar las pelis según productora
           peliculas_productor = [peliculas for peliculas in cls.list_movies if peliculas.productora.lower() == productora.lower()]
           return peliculas_productor
 
+        ''' 
+        @classmethod
+        def pelisPorProductora(cls, productora):
+            peliculas_encontradas = []
+            for pelicula in cls.list_movies:
+              if pelicula.productora.lower() == productora.lower():
+                 peliculas_encontradas.append(pelicula)
+            return peliculas_encontradas
+                
+                    
 
 # Retornar las pelis con una cadena en el título. Esta cadena se pasará como parámetro.
-
+        '''
         @classmethod
         def pelisPorCadenaTitulo(cls, cadenaTitulo):
           peliculas_cadena = [pelicula for pelicula in cls.list_movies if cadenaTitulo.lower() in pelicula.titulo.lower()]
           return peliculas_cadena
-        
+        '''
+        @classmethod
+        def pelisPorCadenaTitulo(cls, cadenaTitulo):
+            peliculas_encontradas = []
+            for pelicula in cls.list_movies:
+                if cadenaTitulo.lower() in pelicula.titulo.lower():
+                    peliculas_encontradas.append(pelicula)
+            return peliculas_encontradas
 
 # Retornar cuántas pelis superan la duración media.
-        
-
+        '''
         @classmethod
         def totalPeliculas(cls):
           return len(cls.list_movies)  # Cuenta correctamente las películas
 
+        '''
+        @classmethod
+        def totalPeliculas(cls):
+            total_peliculas = 0
+            for pelicula in cls.list_movies:
+                total_peliculas+=1
+            return total_peliculas
+
+
+        '''
         @classmethod
         def mediaDuracionPeliculas(cls):
           total_duracion = sum(pelicula.minutos for pelicula in cls.list_movies)
           return total_duracion / cls.totalPeliculas()
-
+        '''
+        @classmethod
+        def mediaDuracionPeliculas(cls):
+            total_duracion = 0
+            for pelicula in cls.list_movies:
+                total_duracion += pelicula.minutos
+            return total_duracion/cls.totalPeliculas()
+        
+        
+        '''
         @classmethod
         def peliculasSuperanMedia(cls):
           media = cls.mediaDuracionPeliculas()
           return [pelicula for pelicula in cls.list_movies if pelicula.minutos > media]
+
+        '''
+        @classmethod
+        def peliculasSuperanMedia(cls):
+            lista_mayor_media = []
+            for pelicula in cls.list_movies:
+                if pelicula.minutos > cls.mediaDuracionPeliculas():
+                    lista_mayor_media.append(pelicula)
+            return lista_mayor_media
+        
         
         @classmethod
         def cantidadPeliculasSuperanMedia(cls):

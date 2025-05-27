@@ -78,7 +78,7 @@ Vamos a ver qué pasa paso a paso en el código con los productos de ejemplo:
 '''
 #Ojo podemos saltarnos esta linea de código, pero la diferencia es
 #que no lo almacenará, y solo lo imprime. Ya según el caso.
-productos_verdura = [producto for producto in productos if producto.categoria.lower() == "verdura"]
+#productos_verdura = [producto for producto in productos if producto.categoria.lower() == "verdura"]
 for producto in productos:
     if producto.categoria.lower() == "verdura":
         print(producto)

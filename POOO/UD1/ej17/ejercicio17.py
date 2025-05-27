@@ -16,7 +16,7 @@ auto2 = Vehiculo("XYZ999", "Ford", "Focus", "Gris", 2021, 5000, 160)
 ListaVehiculos.agregar_vehiculo(auto1)
 ListaVehiculos.agregar_vehiculo(auto2)  # Aquí sí debería saltar el mensaje de duplicado
 
-ListaVehiculos.mostrar_vehiculos()
+ListaVehiculos.mostrar_todos()
 
 
 # Añadir reparacion

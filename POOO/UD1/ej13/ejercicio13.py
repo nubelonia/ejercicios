@@ -38,6 +38,7 @@ en formato diccionario.
 # Recorrer la lista e imprimir los atributos de cada objeto como diccionario
 for producto in productos:
     print(producto.__dict__)  
+    
 
 
 

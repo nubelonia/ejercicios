@@ -15,9 +15,9 @@ p2 = Producto("Manzana", "Fruta", 2, 30)
 
 #En este caso usamos if else, para comparar los dos productos. como se cumple la primera condición, pues la imprime.
 if p2.precio > p1.precio:
-    print("El producto más caro es: ", p2)
+    print("El producto más caro es -> ", p2)
 else:
-    print("El producto más caro es: ", p1)
+    print("El producto más caro es -> ", p1)
 
 '''
 El producto más caro es:  Nombre: Manzana, Categoria: Fruta, Precio: 2, Cantidad: 30

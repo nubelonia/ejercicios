@@ -29,12 +29,17 @@ print()
 
 # Añadir un nuevo partido
 # Observa como el método recibe un objeto partido como argumento
+
+print("Partidos añadido")
 nuevo_partido = Partido("Betis", "Alavés", 3, 1, "Copa", datetime(2023, 10, 30))
 GestionPartidos.anadir_partido(nuevo_partido)
+print(nuevo_partido)
 
 # Añadir partido met. 2
-GestionPartidos.anadir_partido_2(local="Zafra", visitante="Medina", goles_local=3, goles_visitante=3, camp="Liga", fecha=datetime(2024, 10, 1))
+nuevo_partido_dos = GestionPartidos.anadir_partido_2(local="Zafra", visitante="Medina", goles_local=3, goles_visitante=3, camp="Liga", fecha=datetime(2024, 10, 1))
+print(nuevo_partido_dos)   
 
 # Filtrar por año
 print("Partidos del 2024")
 GestionPartidos.partidos_anio(2024)
+print()

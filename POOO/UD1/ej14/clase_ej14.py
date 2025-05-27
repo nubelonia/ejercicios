@@ -39,7 +39,7 @@ class Contacto:
     
 
 class Agenda:
-    contactos = [1,
+    contactos = [
         Contacto("Ana", "484484844", "ana@gmail.com"),
         Contacto("Luis", "22222222", "luis@gmail.com"),
         Contacto("Eva", "33333333", "eva@gmail.com"),
