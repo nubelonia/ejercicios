@@ -1,0 +1,68 @@
+{
+  "datos": [
+    {
+      "Nombre": "Ana López",
+      "Edad": 22,
+      "Género": "Femenino",
+      "Carrera": "Ingeniería",
+      "Calificación_Curso": 8.5,
+      "Satisfacción": 4
+    },
+    {
+      "Nombre": "Carlos Ruiz",
+      "Edad": 28,
+      "Género": "Masculino",
+      "Carrera": "Medicina",
+      "Calificación_Curso": 6.0,
+      "Satisfacción": 5
+    },
+    {
+      "Nombre": "Marta Díaz",
+      "Edad": 19,
+      "Género": "Femenino",
+      "Carrera": "Derecho",
+      "Calificación_Curso": null,
+      "Satisfacción": 3
+    },
+    {
+      "Nombre": "Ana López",
+      "Edad": 22,
+      "Género": "Femenino",
+      "Carrera": "Ingeniería",
+      "Calificación_Curso": 8.5,
+      "Satisfacción": 4
+    },
+    {
+      "Nombre": "Jorge Méndez",
+      "Edad": 40,
+      "Género": "Masculino",
+      "Carrera": "Administración",
+      "Calificación_Curso": 4.5,
+      "Satisfacción": 2
+    },
+    {
+      "Nombre": "Miguel Suarez",
+      "Edad": 31,
+      "Género": "Masculino",
+      "Carrera": "Administración",
+      "Calificación_Curso": 7.5,
+      "Satisfacción": 3
+    },
+    {
+      "Nombre": "Ángeles Campeón",
+      "Edad": 26,
+      "Género": "Femenino",
+      "Carrera": "Ingeniería",
+      "Calificación_Curso": 10,
+      "Satisfacción": 5
+    },
+    {
+      "Nombre": "Luisa Pérez",
+      "Edad": 34,
+      "Género": "Femenino",
+      "Carrera": "Medicina",
+      "Calificación_Curso": 6.6,
+      "Satisfacción": 3
+    }
+  ]
+}
